@@ -1,0 +1,24 @@
+.buyTableRow {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    border-bottom: 1px solid #a5a1a1;
+    margin-top: 5px;
+    max-width: 530px;
+
+}
+.buyTableRow__name {
+    width: 180px;
+    text-align: start;
+}
+.buyTableRow__number {
+    width: 70px;
+    text-align: start;
+}
+.buyTableRow__sum {
+    width: 100px;
+    text-align: start;
+}
+.rowBtn {
+    width: 50px;
+}

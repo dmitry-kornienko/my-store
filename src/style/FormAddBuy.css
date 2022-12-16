@@ -1,0 +1,11 @@
+.formBuy {
+    gap: 10px;
+}
+.componentInfo {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+.date {
+    font-weight: bold;
+}

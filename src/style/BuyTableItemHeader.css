@@ -1,0 +1,26 @@
+.buyTableItemHeader {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 20px;
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    border-bottom: 1px solid black;
+    max-width: 520px;
+}
+.buyTableItemHeader__name {
+    width: 180px;
+    text-align: start;
+}
+.buyTableItemHeader__number {
+    width: 70px;
+    text-align: start;
+}
+.buyTableItemHeader__sum {
+    width: 100px;
+    text-align: start;
+}
+.emptiDiv {
+    width: 100px;
+}

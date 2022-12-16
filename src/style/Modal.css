@@ -1,0 +1,30 @@
+.modal {
+    height: 100vh;
+    width: 100vw;
+    background-color: rgba(0, 0, 0, 0.4);
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: scale(0);
+}
+.modal.active {
+    transform: scale(1);
+}
+.modalContent {
+    padding: 30px;
+    border-radius: 10px;
+    background-color: #fff;
+    color: black;
+}
+.emptyList {
+    border-radius: 6px;
+    border: none;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), 0px -4px 4px rgba(0, 0, 0, 0.25);
+    font-size: 20px;
+    padding: 20px;
+    text-align: center;
+    margin-top: 15px;
+}

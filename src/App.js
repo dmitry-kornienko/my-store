@@ -1,24 +1,25 @@
-import logo from './logo.svg';
-import './App.css';
+import './style/App.css'
+import { Route, Routes } from "react-router-dom";
+import Navigation from './components/Navigation';
+import RemainderPage from './pages/RemainderPage';
+import BuyPage from './pages/BuyPage';
+import PackedPage from './pages/PackedPage';
+import SentPage from './pages/SentPage';
+import FinancePage from './pages/FinancePage';
+import './style/App.css';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+        <Navigation />
+          <Routes>
+            <Route path='/' element={ <RemainderPage /> } />
+            <Route path='/buy' element={ <BuyPage /> } />
+            <Route path='/packed' element={ <PackedPage /> } />
+            <Route path='/sent' element={ <SentPage /> } />
+            <Route path='/finance' element={ <FinancePage /> } />
+          </Routes>
+      </div>
   );
 }
 

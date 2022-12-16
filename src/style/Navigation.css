@@ -1,0 +1,32 @@
+.nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 50px;
+    background-color: rgb(130, 190, 186);
+    padding: 0 50px;
+}
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: black;
+}
+.links {
+    display: flex;
+    gap: 15px;
+    font-size: 18px;
+    text-decoration: none;
+}
+.link {
+    text-decoration: none;
+    color: black;
+}
+.link:hover {
+    cursor: pointer;
+    border-bottom: 1px solid rgb(255, 255, 255);
+    
+}
+.active {
+    color: white;
+    border-bottom: 1px solid white;
+}

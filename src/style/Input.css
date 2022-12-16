@@ -1,0 +1,11 @@
+.input {
+    border: none;
+    border-bottom: 2px solid #bebebe;
+    padding: 0 10px;
+    outline: none;
+    max-width: 100px;
+}
+.inputDate {
+    max-width: 150px;
+    margin-bottom: 10px;
+}
