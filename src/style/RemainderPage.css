@@ -1,0 +1,44 @@
+.remainderTable {
+    border-radius: 6px;
+    padding: 20px 30px;
+    box-shadow: -4px -7px 14px #F9F9F9, 3px 3px 16px #B99595;
+    background-color: rgb(229, 223, 223);
+    max-width: 70vw;
+    margin: 0 auto;
+}
+.remainderTableHeader {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    border-bottom: 1px solid #bebebe;
+    max-width: 450px;
+    margin: 0 auto;
+    font-weight: bold;
+    font-size: 18px;
+}
+.remainderTableRow {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    border-bottom: 1px solid #bebebe;
+    max-width: 450px;
+    margin: 0 auto;
+    margin-top: 5px;
+    border-radius: 6px;
+}
+.remainderTableRow:hover {
+    background-color: rgb(247, 239, 239);
+    cursor: default;
+}
+.idColumn {
+    width: 16px;
+}
+.nameColumn {
+    width: 200px;
+    text-align: start;
+}
+.numberColumn {
+    width: 80px;
+}

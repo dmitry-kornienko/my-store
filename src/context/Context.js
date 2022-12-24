@@ -1,6 +1,5 @@
 import React, { useContext, useState } from "react";
 
-
 const Context = React.createContext();
 
 export const useContextAll = () => {
@@ -9,50 +8,26 @@ export const useContextAll = () => {
 
 export const ContextProvider = ({ children }) => {
     const [components, setComponents] = useState([
-        {id: 1, name: 'Капельная лента 20-6-1.6', price: 2.1, count: 270000},
-        {id: 2, name: 'Слепая лента', price: 14, count: 4500},
-        {id: 3, name: 'Тройник ТЛТ', price: 4.5, count: 7000},
-        {id: 4, name: 'Тройник ЛЛЛ', price: 4.5, count: 7000},
-        {id: 5, name: 'Заглушка ленты', price: 4.5, count: 7000},
-        {id: 6, name: 'Заглушка шланга', price: 4.5, count: 7000},
-        {id: 7, name: 'Ремонтный фитинг', price: 4.5, count: 7000},
-        {id: 8, name: 'Уголок ЛЛ', price: 4.5, count: 7000},
-        {id: 9, name: 'Кран ТТ', price: 4.5, count: 7000},
-        {id: 10, name: 'Кран ТЛ', price: 4.5, count: 7000},
-        {id: 11, name: 'Коробка 30-30-3', price: 4.5, count: 7000},
-        {id: 12, name: 'Коробка 39-26-6', price: 4.5, count: 7000},
-        {id: 13, name: 'Короб 60-40-40', price: 4.5, count: 7000},
-        {id: 14, name: 'Пакет 32-43', price: 4.5, count: 7000},
-        {id: 15, name: 'Этикетка 58-40', price: 4.5, count: 7000},
+        {id: 1, name: 'Капельная лента 20-6-1.6', article: '01', price: 2.1, count: 0},
+        {id: 2, name: 'Слепая лента', article: '02', price: 14, count: 0},
+        {id: 3, name: 'Тройник ТЛТ', article: '03', price: 4.5, count: 0},
+        {id: 4, name: 'Тройник ЛЛЛ', article: '04', price: 4.5, count: 0},
+        {id: 5, name: 'Заглушка ленты', article: '05', price: 4.5, count: 0},
+        {id: 6, name: 'Заглушка шланга', article: '06', price: 4.5, count: 0},
+        {id: 7, name: 'Ремонтный фитинг', article: '07', price: 4.5, count: 0},
+        {id: 8, name: 'Уголок ЛЛ', article: '08', price: 4.5, count: 0},
+        {id: 9, name: 'Кран ТТ', article: '09', price: 4.5, count: 0},
+        {id: 10, name: 'Кран ТЛ', article: '10', price: 4.5, count: 0},
+        {id: 11, name: 'Коробка 30-30-3', article: '11', price: 4.5, count: 0},
+        {id: 12, name: 'Коробка 39-26-6', article: '12', price: 4.5, count: 0},
+        {id: 13, name: 'Короб 60-40-40', article: '13', price: 4.5, count: 0},
+        {id: 14, name: 'Пакет 32-43', article: '14', price: 4.5, count: 0},
+        {id: 15, name: 'Этикетка 58-40', article: '15', price: 4.5, count: 0},
     ]);
-    // const [buyComponents, setByuComponents] = useState([
-    //     {id: 1, name: 'Капельная лента 20-6-1.6', price: 2.1, count: 270000},
-    //     {id: 2, name: 'Слепая лента', price: 14, count: 4500},
-    //     {id: 3, name: 'Тройник ТЛТ', price: 4.5, count: 7000},
-    // ]);
 
     const [isActiveModal, setIsActiveModal] = useState(false);
 
-    const [buyTables, setBuyTables] = useState([
-        {id: 1, date: '2022-12-08', components: [
-            {id: 1, name: 'Капельная лента', count: 3000, price: 7},
-            {id: 2, name: 'Тройник ТЛТ', count: 7500, price: 13},
-            {id: 3, name: 'Ремонтный фитинг', count: 950, price: 5},
-        ]},
-        {id: 2, date: '2022-10-11', components: [
-            {id: 1, name: 'Капельная лента', count: 3000, price: 7},
-            {id: 2, name: 'Тройник ТЛТ', count: 7500, price: 13},
-            {id: 3, name: 'Ремонтный фитинг', count: 950, price: 5},
-            {id: 4, name: 'Заглушка ленты', count: 2950, price: 9},
-        ]},
-        {id: 3, date: '2022-07-03', components: [
-            {id: 1, name: 'Капельная лента', count: 3000, price: 7},
-            {id: 2, name: 'Тройник ТЛТ', count: 7500, price: 13},
-            {id: 3, name: 'Ремонтный фитинг', count: 950, price: 5},
-            {id: 4, name: 'Заглушка шланга', count: 450, price: 2},
-            {id: 5, name: 'Коробка', count: 50, price: 15},
-        ]},
-    ]);
+    const [buyTables, setBuyTables] = useState([]);
 
 
 

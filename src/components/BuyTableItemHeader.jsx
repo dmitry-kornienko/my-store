@@ -8,7 +8,6 @@ export default function BuyTableItemHeader() {
         <div className='buyTableItemHeader__number'>Кол-во</div>
         <div className='buyTableItemHeader__number'>Цена</div>
         <div className='buyTableItemHeader__sum'>Сумма</div>
-        {/* <div className='emptiDiv'></div> */}
     </div>
   )
 }
