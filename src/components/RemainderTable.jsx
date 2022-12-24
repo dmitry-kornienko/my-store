@@ -6,11 +6,13 @@ import RemainderTableHeader from '../components/RemainderTableHeader';
 
 
 export default function RemainderTable() {
-    const { components } = useContextAll();
+    const { components, complects } = useContextAll();
+
+    const sumArrComponents = [...components, ...complects];
   return (
     <div className='remainderTable'>
         <RemainderTableHeader />
-        {components.map(item =>
+        {sumArrComponents.map(item =>
             <RemainderTableRow item={item} key={item.id} />
         )}
     </div>

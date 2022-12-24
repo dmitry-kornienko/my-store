@@ -58,7 +58,7 @@ export default function FormAddBuy({ createNewComponent, date, setDate }) {
                 value={price}
                 setValue={setPrice}
                 placeholder='Цена'
-                />
+            />
             <Btn onClick={addNewComponent}>Добавить</Btn>
         </div>
     </form>
