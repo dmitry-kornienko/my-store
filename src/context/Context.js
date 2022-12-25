@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 
 const Context = React.createContext();
 export const useContextAll = () => {
@@ -6,6 +6,13 @@ export const useContextAll = () => {
 }
 
 export const ContextProvider = ({ children }) => {
+    const [navLinks, setNavLinks] = useState([
+        {id: 1, name: 'Остатки', path: '/', isActive: true},
+        {id: 2, name: 'Закупка', path: '/buy', isActive: false},
+        {id: 3, name: 'Упаковано', path: '/packed', isActive: false},
+        {id: 4, name: 'Отправлено', path: '/sent', isActive: false},
+        {id: 5, name: 'Финансы', path: '/finance', isActive: false},
+    ])
     const [components, setComponents] = useState([
         {id: 1, name: 'Капельная лента 20-6-1.6', article: '01', price: 1.95, count: 0},
         {id: 2, name: 'Капельная лента 10-6-1.6', article: '02', price: 2.2, count: 0},
@@ -67,7 +74,33 @@ export const ContextProvider = ({ children }) => {
             {id: 10, name: 'Короб 60-40-40', count: 0.077},
             {id: 11, name: 'Уголок ЛЛ', count: 2},
         ]},
-    ])
+    ]);
+    useEffect(() => {
+        setNavLinks(JSON.parse(localStorage.getItem('navLinks')));
+        setComponents(JSON.parse(localStorage.getItem('components')));
+        setBuyTables(JSON.parse(localStorage.getItem('buyTables')));
+        setPackedList(JSON.parse(localStorage.getItem('packedList')));
+        setSentList(JSON.parse(localStorage.getItem('sentList')));
+        setComplects(JSON.parse(localStorage.getItem('complects')));
+    }, []);
+    useEffect(() => {
+        localStorage.setItem('navLinks', JSON.stringify(navLinks));
+    }, [navLinks]);  
+    useEffect(() => {
+        localStorage.setItem('components', JSON.stringify(components));
+    }, [components]);  
+    useEffect(() => {
+        localStorage.setItem('buyTables', JSON.stringify(buyTables));
+    }, [buyTables]);  
+    useEffect(() => {
+        localStorage.setItem('packedList', JSON.stringify(packedList));
+    }, [packedList]);  
+    useEffect(() => {
+        localStorage.setItem('sentList', JSON.stringify(sentList));
+    }, [sentList]);  
+    useEffect(() => {
+        localStorage.setItem('complects', JSON.stringify(complects));
+    }, [complects]);
 
     return (
         <Context.Provider
@@ -84,6 +117,8 @@ export const ContextProvider = ({ children }) => {
                 setPackedList,
                 sentList,
                 setSentList,
+                navLinks,
+                setNavLinks,
             }}
         >
             { children }
