@@ -4,7 +4,6 @@ import OperationTableHeader from './OperationTableHeader';
 import DeleteBtn from './DeleteBtn';
 
 export default function BuyTableItem({ components, date, removeComponent, index, removeOperation }) {
-
   let total = 0;
   components.forEach((component) => {
     total += component.price * component.count;

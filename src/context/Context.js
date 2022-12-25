@@ -1,7 +1,6 @@
 import React, { useContext, useState } from "react";
 
 const Context = React.createContext();
-
 export const useContextAll = () => {
     return useContext(Context);
 }
@@ -25,49 +24,48 @@ export const ContextProvider = ({ children }) => {
         {id: 15, name: 'Пакет 32-43', article: '15', price: 4.5, count: 0},
         {id: 16, name: 'Этикетка 58-40', article: '16', price: 4.5, count: 0},
     ]);
-
     const [isActiveModal, setIsActiveModal] = useState(false);
-
     const [buyTables, setBuyTables] = useState([]);
-
+    const [packedList, setPackedList] = useState([]);
+    const [sentList, setSentList] = useState([]);
     const [complects, setComplects] = useState([
         {id: 17, name: 'Ком. 50м на трубке шаг 20 см', article: 'bgr-wp-50-1', count: 0, structure: [
-            {id: 1, component: 'Капельная лента 20-6-1.6', count: 50},
-            {id: 2, component: 'Тройник ТЛТ', count: 5},
-            {id: 3, component: 'Заглушка ленты', count: 5},
-            {id: 4, component: 'Заглушка шланга', count: 1},
-            {id: 5, component: 'Ремонтный фитинг', count: 2},
-            {id: 6, component: 'Кран ТТ', count: 1},
-            {id: 7, component: 'Коробка 30-30-3', count: 1},
-            {id: 8, component: 'Пакет 32-43', count: 1},
-            {id: 9, component: 'Этикетка 58-40', count: 1},
-            {id: 10, component: 'Короб 60-40-40', count: 0.042},
+            {id: 1, name: 'Капельная лента 20-6-1.6', count: 50},
+            {id: 2, name: 'Тройник ТЛТ', count: 5},
+            {id: 3, name: 'Заглушка ленты', count: 5},
+            {id: 4, name: 'Заглушка шланга', count: 1},
+            {id: 5, name: 'Ремонтный фитинг', count: 2},
+            {id: 6, name: 'Кран ТТ', count: 1},
+            {id: 7, name: 'Коробка 30-30-3', count: 1},
+            {id: 8, name: 'Пакет 32-43', count: 1},
+            {id: 9, name: 'Этикетка 58-40', count: 1},
+            {id: 10, name: 'Короб 60-40-40', count: 0.042},
         ]},
         {id: 18, name: 'Ком. 100м на ленте шаг 20 см', article: 'bgr-wp-100', count: 0, structure: [
-            {id: 1, component: 'Капельная лента 20-6-1.6', count: 100},
-            {id: 2, component: 'Тройник ЛЛЛ', count: 9},
-            {id: 3, component: 'Заглушка ленты', count: 10},
-            {id: 4, component: 'Слепая лента', count: 10},
-            {id: 5, component: 'Ремонтный фитинг', count: 3},
-            {id: 6, component: 'Кран ТЛ', count: 1},
-            {id: 7, component: 'Коробка 39-26-6', count: 1},
-            {id: 8, component: 'Пакет 32-43', count: 1},
-            {id: 9, component: 'Этикетка 58-40', count: 1},
-            {id: 10, component: 'Короб 60-40-40', count: 0.077},
-            {id: 11, component: 'Уголок ЛЛ', count: 2},
+            {id: 1, name: 'Капельная лента 20-6-1.6', count: 100},
+            {id: 2, name: 'Тройник ЛЛЛ', count: 9},
+            {id: 3, name: 'Заглушка ленты', count: 10},
+            {id: 4, name: 'Слепая лента', count: 10},
+            {id: 5, name: 'Ремонтный фитинг', count: 3},
+            {id: 6, name: 'Кран ТЛ', count: 1},
+            {id: 7, name: 'Коробка 39-26-6', count: 1},
+            {id: 8, name: 'Пакет 32-43', count: 1},
+            {id: 9, name: 'Этикетка 58-40', count: 1},
+            {id: 10, name: 'Короб 60-40-40', count: 0.077},
+            {id: 11, name: 'Уголок ЛЛ', count: 2},
         ]},
         {id: 19, name: 'Ком. 100м на ленте шаг 10 см', article: 'К-100Л-10', count: 0, structure: [
-            {id: 1, component: 'Капельная лента 10-6-1.6', count: 100},
-            {id: 2, component: 'Тройник ЛЛЛ', count: 9},
-            {id: 3, component: 'Заглушка ленты', count: 10},
-            {id: 4, component: 'Слепая лента', count: 10},
-            {id: 5, component: 'Ремонтный фитинг', count: 3},
-            {id: 6, component: 'Кран ТЛ', count: 1},
-            {id: 7, component: 'Коробка 39-26-6', count: 1},
-            {id: 8, component: 'Пакет 32-43', count: 1},
-            {id: 9, component: 'Этикетка 58-40', count: 1},
-            {id: 10, component: 'Короб 60-40-40', count: 0.077},
-            {id: 11, component: 'Уголок ЛЛ', count: 2},
+            {id: 1, name: 'Капельная лента 10-6-1.6', count: 100},
+            {id: 2, name: 'Тройник ЛЛЛ', count: 9},
+            {id: 3, name: 'Заглушка ленты', count: 10},
+            {id: 4, name: 'Слепая лента', count: 10},
+            {id: 5, name: 'Ремонтный фитинг', count: 3},
+            {id: 6, name: 'Кран ТЛ', count: 1},
+            {id: 7, name: 'Коробка 39-26-6', count: 1},
+            {id: 8, name: 'Пакет 32-43', count: 1},
+            {id: 9, name: 'Этикетка 58-40', count: 1},
+            {id: 10, name: 'Короб 60-40-40', count: 0.077},
+            {id: 11, name: 'Уголок ЛЛ', count: 2},
         ]},
     ])
 
@@ -82,6 +80,10 @@ export const ContextProvider = ({ children }) => {
                 setBuyTables,
                 complects,
                 setComplects,
+                packedList,
+                setPackedList,
+                sentList,
+                setSentList,
             }}
         >
             { children }

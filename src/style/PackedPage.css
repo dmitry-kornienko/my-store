@@ -1,0 +1,40 @@
+.packedForm {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+.packedList {
+    box-shadow: -4px -7px 14px #F9F9F9, 3px 3px 16px #B99595;
+    border-radius: 6px;
+    margin: 10px auto;
+    padding: 20px 40px;
+    max-width: 700px;
+}
+.packedItem {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    border-radius: 6px;
+    border-bottom: 1px solid #bebebe;
+    max-width: 650px;
+    margin-top: 5px;
+}
+.packedItem:hover {
+    background-color: #fff;
+}
+.packedDate {
+    width: 80px;
+}
+.packedName {
+    width: 210px;
+    text-align: start;
+}
+.packedArticle {
+    width: 85px;
+    text-align: start;
+}
+.packedCount {
+    width: 55px;
+}

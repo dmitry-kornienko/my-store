@@ -7,23 +7,19 @@ import FormAddBuy from './FormAddBuy';
 
 export default function Modal() {
   const { isActiveModal, setIsActiveModal, buyTables, setBuyTables, components, setComponents } = useContextAll();
-
   const [newComponents, setNewComponents] = useState([]);
-
   const [date, setDate] = useState('');
 
   const createNewComponent = (newComponent) => {
-    setNewComponents([...newComponents, newComponent])
+    setNewComponents([...newComponents, newComponent]);
   }
-
   const removeComponent = (component) => {
-    setNewComponents(newComponents.filter((item) => item.id !== component.id))
+    setNewComponents(newComponents.filter((item) => item.id !== component.id));
   }
   const cancelModal = () => {
     setNewComponents([]);
     setIsActiveModal(false);
   }
-
   const addBuyTable = () => {
     if (date) {
       const newOperation = {
@@ -35,7 +31,7 @@ export default function Modal() {
         const indexCurrentComponent = components.findIndex(component => component.name === item.name);
         const newComponents = [...components];
         newComponents[indexCurrentComponent].count += Number(item.count);
-        setComponents(newComponents)
+        setComponents(newComponents);
       })
       setBuyTables([newOperation, ...buyTables]);
       setDate('');
