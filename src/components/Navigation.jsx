@@ -5,7 +5,6 @@ import '../style/Navigation.css';
 
 
 export default function Navigation() {
-
     const [navLinks, setNavLinks] = useState([
         {id: 1, name: 'Остатки', path: '/', isActive: true},
         {id: 2, name: 'Закупка', path: '/buy', isActive: false},
@@ -13,13 +12,12 @@ export default function Navigation() {
         {id: 4, name: 'Отправлено', path: '/sent', isActive: false},
         {id: 5, name: 'Финансы', path: '/finance', isActive: false},
     ])
-
     const activedLinks = (id) => {
         [...navLinks].forEach(link => link.isActive = false)
         const indexActiveLink = navLinks.findIndex(link => link.id === id);
         const newNavLinks = [...navLinks];
         newNavLinks[indexActiveLink].isActive = true;
-        setNavLinks(newNavLinks)
+        setNavLinks(newNavLinks);
     }
     
   return (

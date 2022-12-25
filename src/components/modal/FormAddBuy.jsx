@@ -10,12 +10,10 @@ export default function FormAddBuy({ createNewComponent, date, setDate }) {
     const [name, setName] = useState('Товар');
     const [count, setCount] = useState('');
     const [price, setPrice] = useState('');
-    
     const { components } = useContextAll();
 
     const addNewComponent = (e) => {
         e.preventDefault();
-
         if (count && price && name !== 'Товар') {
             const newComponent = {
                 id: Date.now(),
@@ -58,7 +56,7 @@ export default function FormAddBuy({ createNewComponent, date, setDate }) {
                 value={price}
                 setValue={setPrice}
                 placeholder='Цена'
-                />
+            />
             <Btn onClick={addNewComponent}>Добавить</Btn>
         </div>
     </form>

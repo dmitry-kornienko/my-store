@@ -1,10 +1,9 @@
-import React from 'react'
+import React from 'react';
 import BuyTableRow from './BuyTableRow';
 import '../style/BuyTableItem.css';
 import BuyTableItemHeader from './BuyTableItemHeader';
 
 export default function BuyTableItem({ components, date, removeComponent }) {
-
   let total = 0;
   components.forEach((component) => {
     total += component.price * component.count;
