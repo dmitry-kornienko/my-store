@@ -25,6 +25,8 @@ export default function FormAddBuy({ createNewComponent, date, setDate }) {
             setName('Товар');
             setCount('');
             setPrice('');
+        } else {
+            alert('Заполните все поля')
         }
     }
 
