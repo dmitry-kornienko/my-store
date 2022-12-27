@@ -41,6 +41,8 @@ export default function FormPacked() {
             setDate('');
             increaseComplectCount();
             increaseComponentCount();
+        } else {
+            alert('Заполните все поля')
         }
     }
 

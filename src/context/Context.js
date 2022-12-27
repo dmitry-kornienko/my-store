@@ -10,7 +10,7 @@ export const ContextProvider = ({ children }) => {
         {id: 1, name: 'Остатки', path: '/', isActive: true},
         {id: 2, name: 'Закупка', path: '/buy', isActive: false},
         {id: 3, name: 'Упаковано', path: '/packed', isActive: false},
-        {id: 4, name: 'Отправлено', path: '/sent', isActive: false},
+        {id: 4, name: 'Поставки', path: '/sent', isActive: false},
         {id: 5, name: 'Финансы', path: '/finance', isActive: false},
     ])
     const [components, setComponents] = useState([

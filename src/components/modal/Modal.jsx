@@ -37,6 +37,8 @@ export default function Modal() {
       setDate('');
       setNewComponents([]);
       setIsActiveModal(false);
+    } else {
+      alert('Не указана дата проведения операции')
     }
   }
 
