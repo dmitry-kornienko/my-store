@@ -80,7 +80,7 @@ span {
     width: 85px;
     text-align: start;
 }
-.packedCountProduct {
+.packedCountProduct, .packedCount {
     width: 55px;
 }
 .packedPrice {

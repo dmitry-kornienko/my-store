@@ -75,6 +75,13 @@ export const ContextProvider = ({ children }) => {
             {id: 11, name: 'Уголок ЛЛ', count: 2},
         ]},
     ]);
+    const dateFormat = (date) => {
+        const arr = date.split('-');
+        const dateFormat = arr.reverse().join('.');
+        return dateFormat;
+    } 
+
+    
     useEffect(() => {
         setNavLinks(JSON.parse(localStorage.getItem('navLinks')));
         setComponents(JSON.parse(localStorage.getItem('components')));
@@ -119,6 +126,7 @@ export const ContextProvider = ({ children }) => {
                 setSentList,
                 navLinks,
                 setNavLinks,
+                dateFormat,
             }}
         >
             { children }

@@ -14,7 +14,7 @@ export default function PackedList() {
                     <SentItem complect={item} key={item.id} />
                 )
                 :
-                <div className='emptyList'>Список пуст</div>
+                <div className='emptyList'>Поставок еще не было</div>
             }
         </div>
     )

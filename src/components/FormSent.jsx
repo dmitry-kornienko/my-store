@@ -17,11 +17,26 @@ export default function FormPacked() {
     const [price, setPrice] = useState('');
     const { complects, setComplects, sentList, setSentList } = useContextAll();
 
-    const increaseComplectCount = () => {
+    const decreaseComplectCount = () => {
         const indexCurrentComplect = complects.findIndex(item => item.name === name);
         const newComplects = [...complects];
         newComplects[indexCurrentComplect].count -= Number(countProduct);
         setComplects(newComplects);
+    }
+    const increaseComplectCount = () => {
+        const indexCurrentComplect = complects.findIndex(item => item.name === name);
+        const newComplects = [...complects];
+        newComplects[indexCurrentComplect].count += Number(countProduct);
+        setComplects(newComplects);
+    }
+    const backToPrevState = (indicatorNegativeCount) => {
+        if (indicatorNegativeCount) {
+            alert('Недостаточно упакованных комплектов на складе')
+            const newSentList = [...sentList];
+            newSentList.unshift();
+            setSentList(newSentList);
+            increaseComplectCount();
+        }
     }
     const sentComplect = (e) => {
         e.preventDefault();
@@ -37,6 +52,7 @@ export default function FormPacked() {
                 stock,
                 invoice,
                 price,
+                agreed: false,
             }
             setSentList([newSentOperation, ...sentList]);
             setCountProduct('');
@@ -48,9 +64,11 @@ export default function FormPacked() {
             setWeight('');
             setStock('');
             setInvoice('');
-            increaseComplectCount();
+            decreaseComplectCount();
+            const isNegativeComplectCount = complects.some(item => item.count < 0);
+            backToPrevState(isNegativeComplectCount);
         } else {
-            alert('Заполните все поля')
+            alert('Заполните все поля');
         }
     }
 

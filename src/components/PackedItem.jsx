@@ -3,7 +3,7 @@ import { useContextAll } from '../context/Context';
 import DeleteBtn from './DeleteBtn';
 
 export default function PackedItem({ complect }) {
-  const { complects, setComplects, packedList, setPackedList, components, setComponents } = useContextAll();
+  const { complects, setComplects, packedList, setPackedList, components, setComponents, dateFormat } = useContextAll();
   const article = complects.find(item => item.name === complect.name).article;
   const decreaseComplectCount = () => {
     const indexCurrentComplect = complects.findIndex(item => item.name === complect.name);
@@ -29,7 +29,7 @@ const deleteComplect = (id) => {
 
   return (
     <div className='packedItem'>
-        <div className='packedDate'>{complect.date}</div>
+        <div className='packedDate'>{dateFormat(complect.date)}</div>
         <div className='packedName'>{complect.name}</div>
         <div className='packedArticle'>{article}</div>
         <div className='packedCount'>{complect.count} шт.</div>
