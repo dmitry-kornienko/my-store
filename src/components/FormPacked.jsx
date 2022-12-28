@@ -9,22 +9,46 @@ export default function FormPacked() {
     const [date, setDate] = useState('');
     const [name, setName] = useState('Комплект');
     const [count, setCount] = useState('');
-    const { complects, setComplects, packedList, setPackedList, components, setComponents } = useContextAll();
+    const { complects, setComplects, packedList, setPackedList, components, setComponents,  } = useContextAll();                   
     const indexCurrentComplect = complects.findIndex(item => item.name === name);
-    const newComplects = [...complects];
-    const newComponents = [...components];
-
+    
     const increaseComplectCount = () => {
+        const newComplects = [...complects];
         newComplects[indexCurrentComplect].count += Number(count);
         setComplects(newComplects);
     }
+    const decreaseComplectCount = () => {
+        const newComplects = [...complects];
+        newComplects[indexCurrentComplect].count -= Number(count);
+        setComplects(newComplects);
+    }
     const increaseComponentCount = () => {
+        const newComponents = [...components];
+        const structure = complects[indexCurrentComplect].structure;
+        structure.forEach(component => {
+            const indexCurrentComponent = components.findIndex(item => item.name === component.name);
+            newComponents[indexCurrentComponent].count += Math.round(count * component.count);
+            setComponents(newComponents);
+        })
+    }
+    const decreaseComponentCount = () => {
+        const newComponents = [...components];
         const structure = complects[indexCurrentComplect].structure;
         structure.forEach(component => {
             const indexCurrentComponent = components.findIndex(item => item.name === component.name);
             newComponents[indexCurrentComponent].count -= Math.round(count * component.count);
             setComponents(newComponents);
         })
+    }
+    const backToPrevState = (indicatorNegativeCount) => {
+        if (indicatorNegativeCount) {
+            alert('Недостаточно комплектующих на складе');
+            decreaseComplectCount();
+            increaseComponentCount();
+            const newPackedList = [...packedList];
+            newPackedList.unshift();
+            setPackedList(newPackedList);
+        }  
     }
     const addComplect = (e) => {
         e.preventDefault();
@@ -40,9 +64,11 @@ export default function FormPacked() {
             setName('Комплект');
             setDate('');
             increaseComplectCount();
-            increaseComponentCount();
+            decreaseComponentCount();
+            const isNegativeCountComponents = components.some(item => item.count < 0);
+            backToPrevState(isNegativeCountComponents);
         } else {
-            alert('Заполните все поля')
+            alert('Заполните все поля');
         }
     }
 
