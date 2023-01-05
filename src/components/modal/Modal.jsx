@@ -31,6 +31,7 @@ export default function Modal() {
         const indexCurrentComponent = components.findIndex(component => component.name === item.name);
         const newComponents = [...components];
         newComponents[indexCurrentComponent].count += Number(item.count);
+        newComponents[indexCurrentComponent].price = item.price;
         setComponents(newComponents);
       })
       setBuyTables([newOperation, ...buyTables]);

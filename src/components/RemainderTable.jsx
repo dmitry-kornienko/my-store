@@ -10,8 +10,8 @@ export default function RemainderTable() {
   return (
     <div className='remainderTable'>
         <RemainderTableHeader />
-        {sumArrComponents.map(item =>
-            <RemainderTableRow item={item} key={item.id} />
+        {sumArrComponents.map((item, index) =>
+            <RemainderTableRow item={item} index={index} key={item.id} />
         )}
     </div>
   )
