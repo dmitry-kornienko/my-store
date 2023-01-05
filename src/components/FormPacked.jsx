@@ -9,7 +9,7 @@ export default function FormPacked() {
     const [date, setDate] = useState('');
     const [name, setName] = useState('Комплект');
     const [count, setCount] = useState('');
-    const { complects, setComplects, packedList, setPackedList, components, setComponents,  } = useContextAll();                   
+    const { complects, setComplects, packedList, setPackedList, components, setComponents } = useContextAll();                   
     const indexCurrentComplect = complects.findIndex(item => item.name === name);
     
     const increaseComplectCount = () => {
@@ -42,7 +42,13 @@ export default function FormPacked() {
     }
     const backToPrevState = (indicatorNegativeCount) => {
         if (indicatorNegativeCount) {
-            alert('Недостаточно комплектующих на складе');
+            const negativeComponentsCount = []
+            components.forEach(component => {
+                if (component.count < 0) {
+                    negativeComponentsCount.push(component.name)
+                }
+            })
+            alert(`Недостаточно комплектующих на складе: ${negativeComponentsCount.join(', ')}`);
             decreaseComplectCount();
             increaseComponentCount();
             const newPackedList = [...packedList];

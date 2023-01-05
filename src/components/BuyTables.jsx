@@ -12,6 +12,7 @@ export default function BuyTables({ buyTables, setBuyTables }) {
       const indexCurrentComponent = components.findIndex(component => component.name === item.name);
       const newComponents = [...components];
       newComponents[indexCurrentComponent].count -= Number(item.count);
+      // newComponents[indexCurrentComponent].price = Number(item.price);
       setComponents(newComponents);
     })
     newBuyTables.splice(index, 1);
